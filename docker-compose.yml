@@ -1,0 +1,25 @@
+services:
+  databasefirst:
+    build: /opt/student-docker-by-ip/Mysql/
+    ports:
+      - '3306:3306'  
+    container_name: Database
+    network_mode:
+        bridge
+
+  backendsecond: 
+    build: /opt/student-docker-by-ip/backend/    
+    ports:
+      - '8080:8080'        
+    container_name: Backend
+    network_mode:
+        bridge
+
+  frontendthrid:
+    build:  /opt/student-docker-by-ip/frontend/
+    ports:
+      - '80:80'
+    container_name: Frontend
+    network_mode:
+        bridge
+      
